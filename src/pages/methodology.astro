@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Methodology — How RestAreaNearMe Sources Stops" description="How a rest area gets listed, what counts as verified, and what we refuse to publish.">
+  <section class="wrap hero"><h1 class="h1">Methodology</h1></section>
+  <section class="wrap section">
+    <p class="lede">A stop is listed only when it can be sourced.</p>
+    <h2 class="h2">Sources</h2>
+    <ul>
+      <li>NHAI published wayside-amenity lists.</li>
+      <li>OpenStreetMap, for facilities tagged as services, rest areas or fuel with toilets.</li>
+      <li>Reader submissions, reviewed before publishing.</li>
+    </ul>
+    <h2 class="h2">What we will not publish</h2>
+    <ul>
+      <li>A coordinate we have not verified.</li>
+      <li>An opening time we have not confirmed — it shows as “not published”.</li>
+      <li>An amenity inferred from the operator's brand.</li>
+    </ul>
+    <p>Each row shows its source and the date it was last verified.</p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: clamp(1.8rem, 5vw, 3rem) 0 0.5rem; }
+  .section { padding: 1.5rem 0 2.5rem; max-width: 46rem; }
+  .section p, .section li { line-height: 1.65; color: var(--color-ink-soft); }
+  .section h2 { margin-top: 1.8rem; }
+</style>

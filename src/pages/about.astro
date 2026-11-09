@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About RestAreaNearMe" description="Who builds RestAreaNearMe, what data it uses and how stops are verified.">
+  <section class="wrap hero"><h1 class="h1">About RestAreaNearMe</h1></section>
+  <section class="wrap section">
+    <p class="lede">RestAreaNearMe lists highway rest areas and wayside amenities across India's major corridors.</p>
+    <p>Every stop carries a source. Where a value is not published — a km marker, an opening time, an amenity — we say “not published” instead of guessing. A guessed pin is worse than no pin.</p>
+    <p>Data comes from NHAI published wayside-amenity lists and OpenStreetMap contributors (ODbL). Reader submissions are reviewed before they appear.</p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: clamp(1.8rem, 5vw, 3rem) 0 0.5rem; }
+  .section { padding: 1.5rem 0 2.5rem; max-width: 46rem; }
+  .section p, .section li { line-height: 1.65; color: var(--color-ink-soft); }
+  .section h2 { margin-top: 1.8rem; }
+</style>

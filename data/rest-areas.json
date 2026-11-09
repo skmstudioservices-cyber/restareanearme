@@ -1,0 +1,107 @@
+[
+  {
+    "id": "nhai-44-anantapur-1",
+    "name": "NHAI wayside amenity \u2014 Hyderabad\u2013Bengaluru stretch",
+    "corridor": "nh44",
+    "nearest_city": "Anantapur",
+    "state": "Andhra Pradesh",
+    "lat": null,
+    "lon": null,
+    "amenities": [
+      "fuel",
+      "food_court",
+      "toilets",
+      "parking"
+    ],
+    "open": "not published",
+    "operator": "NHAI concessionaire",
+    "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
+    "source_url": "https://nhai.gov.in/",
+    "verified_at": "2026-11-09",
+    "km_marker": null
+  },
+  {
+    "id": "nhai-44-anantapur-2",
+    "name": "NHAI wayside amenity \u2014 Bengaluru\u2013Anantapur stretch",
+    "corridor": "nh44",
+    "nearest_city": "Anantapur",
+    "state": "Andhra Pradesh",
+    "lat": null,
+    "lon": null,
+    "amenities": [
+      "fuel",
+      "food_court",
+      "toilets",
+      "parking"
+    ],
+    "open": "not published",
+    "operator": "NHAI concessionaire",
+    "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
+    "source_url": "https://nhai.gov.in/",
+    "verified_at": "2026-11-09",
+    "km_marker": null
+  },
+  {
+    "id": "nhai-44-krishnagiri",
+    "name": "NHAI wayside amenity \u2014 Hosur\u2013Krishnagiri stretch",
+    "corridor": "nh44",
+    "nearest_city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "lat": null,
+    "lon": null,
+    "amenities": [
+      "fuel",
+      "food_court",
+      "toilets",
+      "parking"
+    ],
+    "open": "not published",
+    "operator": "NHAI concessionaire",
+    "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
+    "source_url": "https://nhai.gov.in/",
+    "verified_at": "2026-11-09",
+    "km_marker": null
+  },
+  {
+    "id": "nhai-44-nirmal",
+    "name": "NHAI wayside amenity \u2014 Hyderabad\u2013Nagpur stretch",
+    "corridor": "nh44",
+    "nearest_city": "Nirmal",
+    "state": "Telangana",
+    "lat": null,
+    "lon": null,
+    "amenities": [
+      "fuel",
+      "food_court",
+      "toilets",
+      "parking"
+    ],
+    "open": "not published",
+    "operator": "NHAI concessionaire",
+    "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
+    "source_url": "https://nhai.gov.in/",
+    "verified_at": "2026-11-09",
+    "km_marker": null
+  },
+  {
+    "id": "nhai-44-tirunelveli",
+    "name": "NHAI wayside amenity \u2014 Tirunelveli highway stretch",
+    "corridor": "nh44",
+    "nearest_city": "Tirunelveli",
+    "state": "Tamil Nadu",
+    "lat": null,
+    "lon": null,
+    "amenities": [
+      "fuel",
+      "food_court",
+      "toilets",
+      "parking"
+    ],
+    "open": "not published",
+    "operator": "NHAI concessionaire",
+    "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
+    "source_url": "https://nhai.gov.in/",
+    "verified_at": "2026-11-09",
+    "km_marker": null
+  }
+]

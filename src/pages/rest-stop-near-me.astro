@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Rest Stop Near Me — Highway Breaks That Are Actually Safe" description="How to pick a rest stop on an Indian highway: what makes a stop safe, and where to find the documented ones.">
+  <section class="wrap hero"><h1 class="h1">Rest stop near me</h1></section>
+  <section class="wrap section">
+    <p class="lede">A good rest stop is lit, busy and staffed. Distance alone is a bad way to choose one.</p>
+    <p>Fuel-court food courts are the most dependable 24×7 option. NHAI wayside amenities add parking, first aid and EV charging. Well-reviewed dhabas are excellent in daylight on busy corridors.</p>
+    <h2 class="h2">What to check before you stop</h2>
+    <ul>
+      <li>Is it lit and staffed at the hour you will arrive?</li>
+      <li>Is there visible parking with other vehicles?</li>
+      <li>Do recent reviews mention clean washrooms?</li>
+      <li>Is the food turnover high?</li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: clamp(1.8rem, 5vw, 3rem) 0 0.5rem; }
+  .section { padding: 1.5rem 0 2.5rem; max-width: 46rem; }
+  .section p, .section li { line-height: 1.65; color: var(--color-ink-soft); }
+  .section h2 { margin-top: 1.8rem; }
+</style>

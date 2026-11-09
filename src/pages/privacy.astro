@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Privacy Policy — RestAreaNearMe" description="What RestAreaNearMe collects, why, and how to have it removed.">
+  <section class="wrap hero"><h1 class="h1">Privacy</h1></section>
+  <section class="wrap section">
+    <p class="lede">We collect as little as possible.</p>
+    <p><strong>What we collect:</strong> anonymous page analytics and, if you share it, your device location to centre the map. Location is used in your browser and is not stored.</p>
+    <p><strong>What we do not do:</strong> no account, no email capture without consent, no sale of data, no third-party ad tracking until ads are enabled.</p>
+    <p><strong>Your rights:</strong> under India's DPDP Act you may ask what we hold about you and request deletion. Write to us and we will action it.</p>
+    <p><strong>Third parties:</strong> OpenStreetMap tile servers receive your IP when a map loads.</p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: clamp(1.8rem, 5vw, 3rem) 0 0.5rem; }
+  .section { padding: 1.5rem 0 2.5rem; max-width: 46rem; }
+  .section p, .section li { line-height: 1.65; color: var(--color-ink-soft); }
+  .section h2 { margin-top: 1.8rem; }
+</style>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Static site — crawling is free and indexing is the goal.
+# No crawl-delay, no bot blocks.
+
+Sitemap: https://restareanearme.pages.dev/sitemap.xml

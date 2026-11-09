@@ -1,0 +1,28 @@
+---
+import { corridors } from '../../lib/data';
+---
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/">RestArea<span>NearMe</span></a>
+    <nav class="nav">
+      {corridors.slice(0, 4).map((c) => (
+        <a href={`/corridor/${c.slug}/`}>{c.name}</a>
+      ))}
+      <a href="/rest-area-near-me/">Near me</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header { border-bottom: 1px solid var(--color-line); background: #fff; position: sticky; top: 0; z-index: 20; }
+  .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 60px; }
+  .brand { font-weight: 700; font-size: 1.05rem; color: var(--color-ink); text-decoration: none; letter-spacing: -0.02em; }
+  .brand span { color: var(--color-amber); }
+  .nav { display: flex; gap: 1rem; font-size: 0.9rem; }
+  .nav a { color: var(--color-ink-soft); text-decoration: none; }
+  .nav a:hover { color: var(--color-ink); }
+  @media (max-width: 640px) {
+    .nav { gap: 0.7rem; font-size: 0.82rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nav a:not(:last-child) { display: none; }
+  }
+</style>

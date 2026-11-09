@@ -1,0 +1,91 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { corridors, corridorBySlug, stopsForCorridor, amenityLabel } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return corridors.map((c) => ({ params: { slug: c.slug }, props: { corridor: c } }));
+}
+
+const { corridor } = Astro.props;
+const stops = stopsForCorridor(corridor.slug);
+
+const faq = [
+  [`How often should I stop on the ${corridor.name}?`, 'At least 15 minutes every 2 hours or 150 km. On this corridor plan fuel and food together so one stop covers both.'],
+  [`Where are the NHAI wayside amenities on ${corridor.name}?`, 'They sit near toll plazas and are signed as “Wayside Amenity”. The stops listed below are the ones documented for this corridor.'],
+  [`Are there 24×7 food stops on ${corridor.name}?`, 'Fuel-court food courts are the most reliable 24×7 option. Where an opening time is not published we mark it as not published rather than assume.'],
+  [`Which stops are safest at night on ${corridor.name}?`, 'Lit, staffed and busy. Fuel courts with parking and other vehicles are the safest default.'],
+];
+
+const schema = [
+  { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://restareanearme.pages.dev/' },
+      { '@type': 'ListItem', position: 2, name: corridor.name, item: `https://restareanearme.pages.dev/corridor/${corridor.slug}/` },
+    ] },
+  { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+---
+<Base
+  title={`Rest Areas on ${corridor.name} — ${stops.length} Documented Stops`}
+  description={`Rest areas and wayside amenities on ${corridor.name} (${corridor.label}). ${stops.length} documented stops with amenities and sources.`}
+  schema={schema}
+>
+  <nav class="wrap crumbs"><a href="/">Home</a> <span>/</span> <span>{corridor.name}</span></nav>
+
+  <section class="hero wrap">
+    <span class="tag">{corridor.name}</span>
+    <h1 class="h1">Rest areas on {corridor.name}</h1>
+    <p class="lede">{corridor.label}. {corridor.note}</p>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="h2">{stops.length} documented stops</h2>
+    {stops.length === 0 ? (
+      <p class="lede">No stops are documented for this corridor yet. We do not list a stop until it is sourced.</p>
+    ) : (
+      <div class="grid-cards">
+        {stops.map((s) => (
+          <article class="card">
+            <h3>{s.name}</h3>
+            <p class="loc">{s.nearest_city}, {s.state}</p>
+            <div class="tags">
+              {s.amenities.map((a) => <span class="tag">{amenityLabel(a)}</span>)}
+            </div>
+            <dl class="facts">
+              <div><dt>Open</dt><dd>{s.open}</dd></div>
+              <div><dt>Km marker</dt><dd>{s.km_marker ?? 'not published'}</dd></div>
+              <div><dt>Operator</dt><dd>{s.operator}</dd></div>
+            </dl>
+            <p class="src">Source: {s.source} · verified {s.verified_at}</p>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <section class="wrap section">
+    <h2 class="h2">Questions about {corridor.name}</h2>
+    <div class="faq">
+      {faq.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .crumbs { padding-top: 1rem; font-size: 0.85rem; color: var(--color-ink-soft); display: flex; gap: 0.4rem; }
+  .crumbs a { color: var(--color-ink-soft); text-decoration: none; }
+  .hero { padding: 1.2rem 0 0.5rem; }
+  .hero .tag { margin-bottom: 0.6rem; }
+  .section { padding: 1.8rem 0; }
+  .card h3 { font-size: 0.98rem; font-weight: 650; margin: 0 0 0.25rem; line-height: 1.35; }
+  .loc { margin: 0 0 0.6rem; font-size: 0.86rem; color: var(--color-ink-soft); }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.7rem; }
+  .facts { display: grid; gap: 0.25rem; margin: 0 0 0.6rem; font-size: 0.84rem; }
+  .facts div { display: flex; gap: 0.4rem; }
+  .facts dt { color: var(--color-ink-soft); min-width: 5.2rem; margin: 0; }
+  .facts dd { margin: 0; }
+  .src { font-size: 0.72rem; color: var(--color-ink-soft); margin: 0; border-top: 1px solid var(--color-line); padding-top: 0.5rem; }
+  .faq { display: grid; gap: 0.5rem; margin-top: 1rem; max-width: 48rem; }
+  details { background: #fff; border: 1px solid var(--color-line); border-radius: 12px; padding: 0.9rem 1.1rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 0.6rem 0 0; color: var(--color-ink-soft); line-height: 1.55; }
+</style>

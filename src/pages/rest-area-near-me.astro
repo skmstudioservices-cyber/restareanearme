@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Rest Area Near Me — Find a Safe Stop on Your Route" description="Find the next safe rest area on your highway route. Corridor by corridor, with sources for every stop.">
+  <section class="wrap hero"><h1 class="h1">Rest area near me</h1></section>
+  <section class="wrap section">
+    <p class="lede">The safest stops are NHAI wayside amenities and 24×7 fuel-court food courts. Pick your corridor to see the documented stops.</p>
+    <p>Take a 15-minute break every 2 hours or 150 km. On a long drive, plan fuel and food together so one stop covers both.</p>
+    <h2 class="h2">Browse by corridor</h2>
+    <p>Each corridor page lists the stops documented for that stretch, with amenities, opening status and the source for every row.</p>
+    <p><a class="btn" href="/">See all corridors</a></p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: clamp(1.8rem, 5vw, 3rem) 0 0.5rem; }
+  .section { padding: 1.5rem 0 2.5rem; max-width: 46rem; }
+  .section p, .section li { line-height: 1.65; color: var(--color-ink-soft); }
+  .section h2 { margin-top: 1.8rem; }
+</style>

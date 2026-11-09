@@ -1,0 +1,39 @@
+---
+import { corridors } from '../../lib/data';
+---
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">RestAreaNearMe</p>
+      <p class="footer-note">Highway stops, wayside amenities and safe breaks across India. Every stop carries its source.</p>
+    </div>
+    <div>
+      <p class="footer-head">Corridors</p>
+      <ul>{corridors.map((c) => <li><a href={`/corridor/${c.slug}/`}>{c.name}</a></li>)}</ul>
+    </div>
+    <div>
+      <p class="footer-head">Site</p>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/methodology/">Methodology</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>Data from NHAI published lists and OpenStreetMap contributors (ODbL). Missing values are marked “not published”, never guessed.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--color-line); margin-top: 3rem; padding: 2rem 0 1.5rem; background: #fff; }
+  .footer-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  .footer-brand { font-weight: 700; margin: 0 0 0.4rem; }
+  .footer-note { color: var(--color-ink-soft); font-size: 0.88rem; margin: 0; line-height: 1.5; }
+  .footer-head { font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-ink-soft); margin: 0 0 0.5rem; }
+  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
+  a { color: var(--color-ink); text-decoration: none; font-size: 0.9rem; }
+  a:hover { color: var(--color-amber); }
+  .footer-legal { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-line); }
+  .footer-legal p { font-size: 0.78rem; color: var(--color-ink-soft); margin: 0; }
+</style>

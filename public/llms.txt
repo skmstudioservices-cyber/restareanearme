@@ -1,0 +1,16 @@
+# RestAreaNearMe
+
+> Highway rest areas and NHAI wayside amenities across India's major corridors, with a source on every row.
+
+## What this site covers
+- Rest areas and wayside amenities on NH48, NH44, NH19, NH16, the Delhi-Mumbai Expressway and the Yamuna Expressway.
+- Practical guidance: break every 2 hours or 150 km, choose lit and staffed stops, fuel courts are the safest 24x7 default.
+
+## Pages
+- / — hub, corridor list, FAQ
+- /corridor/{slug}/ — documented stops per corridor
+- /rest-area-near-me/ · /rest-stop-near-me/ · /highway-rest-area-near-me/
+- /about/ · /methodology/ · /privacy/
+
+## Data policy
+Coordinates, opening times and amenities are published only when sourced. Unverified values render as "not published".

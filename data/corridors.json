@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "nh48",
+    "name": "NH48",
+    "label": "Delhi \u2013 Jaipur \u2013 Ahmedabad \u2013 Mumbai",
+    "states": [
+      "Delhi",
+      "Haryana",
+      "Rajasthan",
+      "Gujarat",
+      "Maharashtra"
+    ],
+    "note": "Dense dhaba clusters and NHAI wayside amenities; fuel-court food courts roughly every 60-80 km."
+  },
+  {
+    "slug": "nh44",
+    "name": "NH44",
+    "label": "Srinagar \u2013 Delhi \u2013 Hyderabad \u2013 Kanyakumari",
+    "states": [
+      "Jammu & Kashmir",
+      "Punjab",
+      "Haryana",
+      "Delhi",
+      "Uttar Pradesh",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Telangana",
+      "Andhra Pradesh",
+      "Karnataka",
+      "Tamil Nadu"
+    ],
+    "note": "India's longest corridor. Plan fuel and food stops around major towns; rural gaps are long."
+  },
+  {
+    "slug": "nh19",
+    "name": "NH19",
+    "label": "Delhi \u2013 Kanpur \u2013 Kolkata",
+    "states": [
+      "Delhi",
+      "Uttar Pradesh",
+      "Bihar",
+      "Jharkhand",
+      "West Bengal"
+    ],
+    "note": "Long rural gaps between Kanpur and Kolkata. 24x7 fuel food courts are the safest default."
+  },
+  {
+    "slug": "nh16",
+    "name": "NH16",
+    "label": "Kolkata \u2013 Bhubaneswar \u2013 Chennai (east coast)",
+    "states": [
+      "West Bengal",
+      "Odisha",
+      "Andhra Pradesh",
+      "Tamil Nadu"
+    ],
+    "note": "Coastal stretches with fewer lit stops at night. Plan the last stop before dark."
+  },
+  {
+    "slug": "delhi-mumbai-expressway",
+    "name": "Delhi\u2013Mumbai Expressway",
+    "label": "Delhi \u2013 Jaipur \u2013 Vadodara \u2013 Mumbai",
+    "states": [
+      "Delhi",
+      "Haryana",
+      "Rajasthan",
+      "Madhya Pradesh",
+      "Gujarat",
+      "Maharashtra"
+    ],
+    "note": "Planned with roughly one wayside amenity every 30-45 minutes of driving."
+  },
+  {
+    "slug": "yamuna-expressway",
+    "name": "Yamuna Expressway",
+    "label": "Greater Noida \u2013 Agra",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "note": "Short corridor with a small number of fuel-and-food plazas; plan your single stop before joining."
+  }
+]

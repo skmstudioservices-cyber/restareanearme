@@ -1,0 +1,24 @@
+{
+  "name": "restareanearme",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "qa": "node qa.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.4",
+    "astro": "^7.4.5",
+    "leaflet": "^1.9.4",
+    "tailwindcss": "^4.3.4"
+  },
+  "overrides": {
+    "vite": "^8.3.5"
+  }
+}

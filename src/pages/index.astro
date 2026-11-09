@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import { corridors, restAreas, amenityLabel } from '../lib/data';
+
+const schema = [
+  {
+    '@type': 'WebSite',
+    name: 'RestAreaNearMe',
+    url: 'https://restareanearme.pages.dev/',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://restareanearme.pages.dev/?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: [
+      ['How often should I take a break on a long drive?', 'Stop for at least 15 minutes every 2 hours or 150 km, whichever comes first. Fatigue slows reaction time as much as alcohol.'],
+      ['Does NHAI provide rest stops on national highways?', 'Yes. NHAI is developing wayside amenities near toll plazas with food, restrooms, parking, EV charging and first aid. Look for the Wayside Amenity signage.'],
+      ['Where should I stop at night on a highway?', 'Choose well-lit, busy places. 24x7 petrol-pump food courts are the safest default. Avoid dark, empty stretches.'],
+    ].map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  },
+];
+---
+<Base
+  title="Rest Area Near Me — Safe Highway Stops & NHAI Wayside Amenities"
+  description="Find safe rest areas on Indian highways: NHAI wayside amenities, 24x7 fuel-court food courts and trusted dhabas, corridor by corridor."
+  schema={schema}
+>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="h1">Rest area near me — find a clean, safe stop on your highway drive</h1>
+      <p class="lede quick">
+        <strong>Quick answer:</strong> the safest rest areas on Indian highways are NHAI wayside amenities and 24×7
+        petrol-pump food courts — lit, staffed and with clean washrooms. Take a 15-minute break every 2 hours or 150 km.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="/rest-area-near-me/">Find a stop near me</a>
+        <a class="btn btn-ghost" href="#corridors">Browse by corridor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="corridors">
+    <h2 class="h2">Rest areas by highway corridor</h2>
+    <p class="lede">Rest-area quality varies by corridor. These are the stretches where planned stops matter most.</p>
+    <div class="grid-cards">
+      {corridors.map((c) => (
+        <a class="card corridor-card" href={`/corridor/${c.slug}/`}>
+          <span class="tag">{c.name}</span>
+          <h3>{c.label}</h3>
+          <p>{c.note}</p>
+          <span class="meta">{restAreas.filter((r) => r.corridor === c.slug).length} stops recorded</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="h2">How to judge a stop in 30 seconds</h2>
+    <ul class="checklist">
+      <li>Lit, busy and staffed 24×7 — fuel courts win at night.</li>
+      <li>Recent reviews mention clean washrooms.</li>
+      <li>Visible parking with other vehicles.</li>
+      <li>Food turnover is high, so the food is fresh.</li>
+    </ul>
+  </section>
+
+  <section class="wrap section">
+    <h2 class="h2">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How often should I take a break on a long drive?</summary><p>Stop for at least 15 minutes every 2 hours or 150 km, whichever comes first. Fatigue slows reaction time as much as alcohol.</p></details>
+      <details><summary>Does NHAI provide rest stops on national highways?</summary><p>Yes. NHAI is developing wayside amenities near toll plazas with food, restrooms, parking, EV charging and first aid. Look for the Wayside Amenity signage.</p></details>
+      <details><summary>Where should I stop at night on a highway?</summary><p>Choose well-lit, busy places. 24×7 petrol-pump food courts are the safest default. Avoid dark, empty stretches.</p></details>
+      <details><summary>How many rest areas are recorded here?</summary><p>{restAreas.length} stops across {corridors.length} corridors, each with its source. Where a value is not published we say so rather than guess.</p></details>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: clamp(2rem, 6vw, 4rem) 0 1rem; }
+  .quick { margin-top: 1rem; max-width: 46rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.4rem; }
+  .section { padding: 2.2rem 0; }
+  .section .h2 { margin-bottom: 0.5rem; }
+  .corridor-card { text-decoration: none; color: inherit; display: grid; gap: 0.5rem; }
+  .corridor-card h3 { font-size: 1.02rem; font-weight: 650; margin: 0.2rem 0 0; }
+  .corridor-card p { margin: 0; font-size: 0.9rem; color: var(--color-ink-soft); line-height: 1.5; }
+  .meta { font-size: 0.78rem; color: var(--color-ink-soft); }
+  .checklist { list-style: none; padding: 0; display: grid; gap: 0.55rem; margin-top: 1rem; }
+  .checklist li { padding-left: 1.5rem; position: relative; line-height: 1.5; }
+  .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--color-amber); font-weight: 700; }
+  .faq { display: grid; gap: 0.5rem; margin-top: 1rem; max-width: 48rem; }
+  details { background: #fff; border: 1px solid var(--color-line); border-radius: 12px; padding: 0.9rem 1.1rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 0.6rem 0 0; color: var(--color-ink-soft); line-height: 1.55; }
+</style>
