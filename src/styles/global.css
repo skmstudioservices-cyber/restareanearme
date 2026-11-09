@@ -16,8 +16,14 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  /* Body copy sits at 500 — readable at arm's length without eye strain. */
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+p, li, dd, dt, td, th, summary { font-weight: 500; }
+p.lede, .lede { font-weight: 480; }
 
 .wrap { width: min(100% - 2rem, 68rem); margin-inline: auto; }
 
@@ -25,7 +31,7 @@ h1, h2, h3 { letter-spacing: -0.02em; text-wrap: balance; }
 
 .h1 { font-size: clamp(1.9rem, 5vw, 3.1rem); line-height: 1.1; font-weight: 700; }
 .h2 { font-size: clamp(1.35rem, 3.2vw, 2rem); line-height: 1.2; font-weight: 650; }
-.lede { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--color-ink-soft); line-height: 1.6; }
+.lede { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--color-ink-soft); line-height: 1.6; font-weight: 500; }
 
 .card {
   background: #fff; border: 1px solid var(--color-line);

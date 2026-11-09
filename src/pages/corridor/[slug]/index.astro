@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { corridors, corridorBySlug, stopsForCorridor, amenityLabel } from '../../../lib/data';
+import StopsMap from '../../../components/map/StopsMap.astro';
 
 export function getStaticPaths() {
   return corridors.map((c) => ({ params: { slug: c.slug }, props: { corridor: c } }));
@@ -38,6 +39,12 @@ const schema = [
   </section>
 
   <section class="wrap section">
+    <h2 class="h2">Map of documented stops</h2>
+    <p class="lede">Pins mark the city centre of each documented stretch. The amenity itself sits somewhere along that stretch — verify before you travel.</p>
+    <StopsMap stops={stops} height="380px" />
+  </section>
+
+  <section class="wrap section">
     <h2 class="h2">{stops.length} documented stops</h2>
     {stops.length === 0 ? (
       <p class="lede">No stops are documented for this corridor yet. We do not list a stop until it is sourced.</p>
@@ -55,6 +62,7 @@ const schema = [
               <div><dt>Km marker</dt><dd>{s.km_marker ?? 'not published'}</dd></div>
               <div><dt>Operator</dt><dd>{s.operator}</dd></div>
             </dl>
+            {s.coord_note && <p class="approx">{s.coord_note}</p>}
             <p class="src">Source: {s.source} · verified {s.verified_at}</p>
           </article>
         ))}
@@ -83,6 +91,7 @@ const schema = [
   .facts div { display: flex; gap: 0.4rem; }
   .facts dt { color: var(--color-ink-soft); min-width: 5.2rem; margin: 0; }
   .facts dd { margin: 0; }
+  .approx { font-size: 0.78rem; color: var(--color-amber); margin: 0 0 0.5rem; line-height: 1.45; }
   .src { font-size: 0.72rem; color: var(--color-ink-soft); margin: 0; border-top: 1px solid var(--color-line); padding-top: 0.5rem; }
   .faq { display: grid; gap: 0.5rem; margin-top: 1rem; max-width: 48rem; }
   details { background: #fff; border: 1px solid var(--color-line); border-radius: 12px; padding: 0.9rem 1.1rem; }

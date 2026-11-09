@@ -1,12 +1,12 @@
 [
   {
     "id": "nhai-44-anantapur-1",
-    "name": "NHAI wayside amenity \u2014 Hyderabad\u2013Bengaluru stretch",
+    "name": "NHAI wayside amenity — Hyderabad–Bengaluru stretch",
     "corridor": "nh44",
     "nearest_city": "Anantapur",
     "state": "Andhra Pradesh",
-    "lat": null,
-    "lon": null,
+    "lat": 14.6783221,
+    "lon": 77.6065039,
     "amenities": [
       "fuel",
       "food_court",
@@ -18,16 +18,19 @@
     "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
     "source_url": "https://nhai.gov.in/",
     "verified_at": "2026-11-09",
-    "km_marker": null
+    "km_marker": null,
+    "coord_precision": "city-centre",
+    "coord_source_url": "https://www.openstreetmap.org/node/603465222",
+    "coord_note": "Pinned at the city centre of Anantapur — the amenity sits somewhere on this stretch. Verify before travelling."
   },
   {
     "id": "nhai-44-anantapur-2",
-    "name": "NHAI wayside amenity \u2014 Bengaluru\u2013Anantapur stretch",
+    "name": "NHAI wayside amenity — Bengaluru–Anantapur stretch",
     "corridor": "nh44",
     "nearest_city": "Anantapur",
     "state": "Andhra Pradesh",
-    "lat": null,
-    "lon": null,
+    "lat": 14.6783221,
+    "lon": 77.6065039,
     "amenities": [
       "fuel",
       "food_court",
@@ -39,16 +42,19 @@
     "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
     "source_url": "https://nhai.gov.in/",
     "verified_at": "2026-11-09",
-    "km_marker": null
+    "km_marker": null,
+    "coord_precision": "city-centre",
+    "coord_source_url": "https://www.openstreetmap.org/node/603465222",
+    "coord_note": "Pinned at the city centre of Anantapur — the amenity sits somewhere on this stretch. Verify before travelling."
   },
   {
     "id": "nhai-44-krishnagiri",
-    "name": "NHAI wayside amenity \u2014 Hosur\u2013Krishnagiri stretch",
+    "name": "NHAI wayside amenity — Hosur–Krishnagiri stretch",
     "corridor": "nh44",
     "nearest_city": "Krishnagiri",
     "state": "Tamil Nadu",
-    "lat": null,
-    "lon": null,
+    "lat": 12.5188835,
+    "lon": 78.2206536,
     "amenities": [
       "fuel",
       "food_court",
@@ -60,16 +66,19 @@
     "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
     "source_url": "https://nhai.gov.in/",
     "verified_at": "2026-11-09",
-    "km_marker": null
+    "km_marker": null,
+    "coord_precision": "city-centre",
+    "coord_source_url": "https://www.openstreetmap.org/way/84652866",
+    "coord_note": "Pinned at the town centre of Krishnagiri — the amenity sits somewhere on this stretch. Verify before travelling."
   },
   {
     "id": "nhai-44-nirmal",
-    "name": "NHAI wayside amenity \u2014 Hyderabad\u2013Nagpur stretch",
+    "name": "NHAI wayside amenity — Hyderabad–Nagpur stretch",
     "corridor": "nh44",
     "nearest_city": "Nirmal",
     "state": "Telangana",
-    "lat": null,
-    "lon": null,
+    "lat": 19.0924602,
+    "lon": 78.3486041,
     "amenities": [
       "fuel",
       "food_court",
@@ -81,16 +90,19 @@
     "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
     "source_url": "https://nhai.gov.in/",
     "verified_at": "2026-11-09",
-    "km_marker": null
+    "km_marker": null,
+    "coord_precision": "city-centre",
+    "coord_source_url": "https://www.openstreetmap.org/node/2948417483",
+    "coord_note": "Pinned at the town centre of Nirmal — the amenity sits somewhere on this stretch. Verify before travelling."
   },
   {
     "id": "nhai-44-tirunelveli",
-    "name": "NHAI wayside amenity \u2014 Tirunelveli highway stretch",
+    "name": "NHAI wayside amenity — Tirunelveli highway stretch",
     "corridor": "nh44",
     "nearest_city": "Tirunelveli",
     "state": "Tamil Nadu",
-    "lat": null,
-    "lon": null,
+    "lat": 8.7331721,
+    "lon": 77.710255,
     "amenities": [
       "fuel",
       "food_court",
@@ -102,6 +114,9 @@
     "source": "NHAI published wayside-amenity list (as carried on the previous restareanearme page)",
     "source_url": "https://nhai.gov.in/",
     "verified_at": "2026-11-09",
-    "km_marker": null
+    "km_marker": null,
+    "coord_precision": "city-centre",
+    "coord_source_url": "https://www.openstreetmap.org/node/245581857",
+    "coord_note": "Pinned at the city centre of Tirunelveli — the amenity sits somewhere on this stretch. Verify before travelling."
   }
 ]

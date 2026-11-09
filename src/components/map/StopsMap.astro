@@ -1,0 +1,103 @@
+---
+import 'leaflet/dist/leaflet.css';
+import type { RestArea } from '../../lib/data';
+
+export interface Props { stops: RestArea[]; height?: string; }
+const { stops, height = '360px' } = Astro.props;
+const points = stops
+  .filter((s) => typeof s.lat === 'number' && typeof s.lon === 'number')
+  .map((s) => ({
+    lat: s.lat as number,
+    lon: s.lon as number,
+    name: s.name,
+    city: s.nearest_city,
+    state: s.state,
+    note: s.coord_note ?? '',
+    approx: s.coord_precision === 'city-centre',
+  }));
+---
+<div class="map-shell" data-height={height}>
+  {points.length > 0 ? (
+    <div
+      id="stops-map"
+      class="map-canvas"
+      data-points={JSON.stringify(points)}
+      role="application"
+      aria-label="Map of documented rest stops on this corridor"
+    ></div>
+  ) : (
+    <p class="map-empty">No stop on this corridor has a verified location yet. We do not drop a pin we cannot source.</p>
+  )}
+</div>
+
+<style>
+  .map-shell { margin-top: 1rem; }
+  .map-canvas {
+    height: var(--map-height, 360px);
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--color-line);
+    background: #eef0ec;
+    z-index: 0;
+  }
+  .map-empty {
+    border: 1px dashed var(--color-line);
+    border-radius: 14px;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+    background: #fff;
+  }
+  :global(.stop-pin) {
+    background: var(--color-amber);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,.35);
+  }
+  :global(.leaflet-popup-content) { font-size: 0.86rem; line-height: 1.45; }
+  :global(.leaflet-popup-content strong) { display: block; margin-bottom: .2rem; }
+  :global(.pop-note) { color: #6b7280; font-size: .78rem; display: block; margin-top: .3rem; }
+</style>
+
+<script>
+  const el = document.getElementById('stops-map') as HTMLElement | null;
+  if (el) {
+    const shell = el.closest('.map-shell') as HTMLElement | null;
+    if (shell) el.style.setProperty('--map-height', shell.dataset.height || '360px');
+
+    const boot = async () => {
+      const L = (await import('leaflet')).default;
+      const points = JSON.parse(el.dataset.points || '[]');
+      if (!points.length) return;
+
+      const map = L.map(el, { scrollWheelZoom: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      const icon = L.divIcon({ className: 'stop-pin', iconSize: [14, 14] });
+      const bounds: [number, number][] = [];
+      for (const p of points) {
+        bounds.push([p.lat, p.lon]);
+        L.marker([p.lat, p.lon], { icon })
+          .addTo(map)
+          .bindPopup(
+            `<strong>${p.name}</strong>${p.city}, ${p.state}` +
+            (p.approx ? `<span class="pop-note">${p.note}</span>` : '')
+          );
+      }
+      if (bounds.length === 1) map.setView(bounds[0], 10);
+      else map.fitBounds(bounds, { padding: [30, 30] });
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { io.disconnect(); boot(); }
+      }, { rootMargin: '200px' });
+      io.observe(el);
+    } else {
+      boot();
+    }
+  }
+</script>

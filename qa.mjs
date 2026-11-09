@@ -39,6 +39,18 @@ const areas = JSON.parse(fs.readFileSync('data/rest-areas.json','utf8'));
 areas.every(a => a.source && a.verified_at) ? ok('every stop has source + verified_at') : bad('stop missing source/verified_at');
 areas.every(a => (a.lat === null && a.lon === null) || (typeof a.lat === 'number' && typeof a.lon === 'number'))
   ? ok('no half-populated coordinates') : bad('half-populated coordinates found');
+areas.every(a => a.lat === null || (a.coord_precision && a.coord_source_url))
+  ? ok('every pin is labelled + sourced') : bad('pin without precision/source');
+
+// map must actually be on the corridor pages
+const nh44 = fs.readFileSync(path.join(dist,'corridor','nh44','index.html'),'utf8');
+nh44.includes('stops-map') ? ok('leaflet map present on corridor page') : bad('leaflet map missing');
+const cssFiles = fs.readdirSync(path.join(dist,'_astro')).filter(f => f.endsWith('.css'));
+const allCss = cssFiles.map(f => fs.readFileSync(path.join(dist,'_astro',f),'utf8')).join('');
+allCss.includes('leaflet-container') ? ok('leaflet css bundled') : bad('leaflet css not bundled');
+
+// body weight rule
+allCss.includes('font-weight:500') || allCss.includes('font-weight: 500') ? ok('body weight 500 applied') : bad('body weight not applied');
 
 console.log(fail === 0 ? '\nQA PASSED' : `\nQA FAILED (${fail})`);
 process.exit(fail === 0 ? 0 : 1);

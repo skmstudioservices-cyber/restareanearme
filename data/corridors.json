@@ -2,7 +2,7 @@
   {
     "slug": "nh48",
     "name": "NH48",
-    "label": "Delhi \u2013 Jaipur \u2013 Ahmedabad \u2013 Mumbai",
+    "label": "Delhi – Jaipur – Ahmedabad – Mumbai",
     "states": [
       "Delhi",
       "Haryana",
@@ -15,7 +15,7 @@
   {
     "slug": "nh44",
     "name": "NH44",
-    "label": "Srinagar \u2013 Delhi \u2013 Hyderabad \u2013 Kanyakumari",
+    "label": "Srinagar – Delhi – Hyderabad – Kanyakumari",
     "states": [
       "Jammu & Kashmir",
       "Punjab",
@@ -34,7 +34,7 @@
   {
     "slug": "nh19",
     "name": "NH19",
-    "label": "Delhi \u2013 Kanpur \u2013 Kolkata",
+    "label": "Delhi – Kanpur – Kolkata",
     "states": [
       "Delhi",
       "Uttar Pradesh",
@@ -47,7 +47,7 @@
   {
     "slug": "nh16",
     "name": "NH16",
-    "label": "Kolkata \u2013 Bhubaneswar \u2013 Chennai (east coast)",
+    "label": "Kolkata – Bhubaneswar – Chennai (east coast)",
     "states": [
       "West Bengal",
       "Odisha",
@@ -58,8 +58,8 @@
   },
   {
     "slug": "delhi-mumbai-expressway",
-    "name": "Delhi\u2013Mumbai Expressway",
-    "label": "Delhi \u2013 Jaipur \u2013 Vadodara \u2013 Mumbai",
+    "name": "Delhi–Mumbai Expressway",
+    "label": "Delhi – Jaipur – Vadodara – Mumbai",
     "states": [
       "Delhi",
       "Haryana",
@@ -73,10 +73,49 @@
   {
     "slug": "yamuna-expressway",
     "name": "Yamuna Expressway",
-    "label": "Greater Noida \u2013 Agra",
+    "label": "Greater Noida – Agra",
     "states": [
       "Uttar Pradesh"
     ],
     "note": "Short corridor with a small number of fuel-and-food plazas; plan your single stop before joining."
+  },
+  {
+    "slug": "nh27",
+    "name": "NH27",
+    "label": "Porbandar – Udaipur – Jhansi – Gorakhpur – Siliguri",
+    "states": [
+      "Gujarat",
+      "Rajasthan",
+      "Madhya Pradesh",
+      "Uttar Pradesh",
+      "Bihar",
+      "West Bengal",
+      "Assam"
+    ],
+    "note": "The East-West corridor. Long rural gaps through MP and Bihar — plan fuel and food together."
+  },
+  {
+    "slug": "nh30",
+    "name": "NH30",
+    "label": "Sitarganj – Bareilly – Lucknow – Patna",
+    "states": [
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "Bihar"
+    ],
+    "note": "Dense town sequence with short gaps; dhabas are plentiful but lit 24x7 stops are fewer after Lucknow."
+  },
+  {
+    "slug": "nh66",
+    "name": "NH66",
+    "label": "Panvel – Goa – Mangaluru – Kanyakumari",
+    "states": [
+      "Maharashtra",
+      "Goa",
+      "Karnataka",
+      "Kerala",
+      "Tamil Nadu"
+    ],
+    "note": "The coastal corridor. Fewer lit stops at night on the Konkan stretch; break earlier than you think you need to."
   }
 ]
